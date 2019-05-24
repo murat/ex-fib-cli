@@ -1,21 +1,28 @@
 # Fib
 
-**TODO: Add description**
+Elixir OptionParser modülünün kullanımını fibonacci sayısı hesaplayarak örnekleyen bir repo.
 
-## Installation
+İlgili blog yazısı : [https://murat.github.io/2019/05/23/elixir-optionparser-cli-uygulamasi/](https://murat.github.io/2019/05/23/elixir-optionparser-cli-uygulamasi/)
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `fib` to your list of dependencies in `mix.exs`:
+## Kurulum
 
-```elixir
-def deps do
-  [
-    {:fib, "~> 0.1.0"}
-  ]
-end
+```bash
+git clone git@github.com:murat/ex-fib-cli.git && cd fib
+
+mix escript.build
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/fib](https://hexdocs.pm/fib).
+## Kullanım
+
+```bash
+➜ mix escript.build && ./fib -n 1000 -c yellow
+
+70330367711422815821835254877183549770181269836358732742604905087154537118196933579742249494562611733487750449241765991088186363265450223647106012053374121273867339111198139373125598767690091902245245323403501
+
+➜ ./fib -n 5 -c red
+8
+
+➜ ./fib -n 5 -c asdf
+** (RuntimeError) Color asdf is invalid ANSI color!
+```
 
